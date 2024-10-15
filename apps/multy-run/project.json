@@ -13,7 +13,28 @@
       ],
       "options": {
         "buildTarget": "multy-run:build",
-        "runBuildTargetDependencies": false
+        "runBuildTargetDependencies": false,
+        "args": ["hello"]
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "multy-run:build:development"
+        },
+        "production": {
+          "buildTarget": "multy-run:build:production"
+        }
+      }
+    },
+    "secure": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": [
+        "build"
+      ],
+      "options": {
+        "buildTarget": "multy-run:build",
+        "runBuildTargetDependencies": false,
+        "args": ["secure"]
       },
       "configurations": {
         "development": {
